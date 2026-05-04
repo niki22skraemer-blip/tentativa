@@ -166,6 +166,11 @@
     flex: initial;
     width: 100%;
     max-width: none;
+    
+  }
+
+  .colu-2 p{
+    size: 14px;
   }
 
   .item {

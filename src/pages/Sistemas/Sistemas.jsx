@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './sistemas.css';
 
 export default function Sistemas() {
@@ -67,37 +68,37 @@ export default function Sistemas() {
           <div className="sistemas-container-grid">
             {/* CARD 1 */}
             <div className="sistemas-card-item">
-              <a href="/visodue">
+              <Link to="/visodue">
                 <h3>VISO DUE</h3>
                 <p className="sistemas-card-descricao">
                   Com mais de 30 anos de experiência, a Visonet simplifica a elaboração da DUE com agilidade, segurança e
                   confiança, otimizando suas exportações para alcançar novos mercados.
                 </p>
                 <span className="sistemas-saiba-mais">Saiba mais</span>
-              </a>
+              </Link>
             </div>
 
             {/* CARD 2 */}
             <div className="sistemas-card-item">
-              <a href="/visoimport">
+              <Link to="/visoimport">
                 <h3>VISO ImportNFE</h3>
                 <p className="sistemas-card-descricao">
                   O Sistema gera arquivos XML’s que possibilitam a emissão da NF-e de Importação, a partir dos dados da
                   Declaração de Importação (DI) Registrada no SISCOMEX.
                 </p>
                 <span className="sistemas-saiba-mais">Saiba mais</span>
-              </a>
+              </Link>
             </div>
 
             {/* CARD 3 */}
             <div className="sistemas-card-item">
-              <a href="/gespro">
+              <Link to="/gespro">
                 <h3>GESPRO</h3>
                 <p className="sistemas-card-descricao">
                   Sistema especializado na gestão eficiente de produtos e na emissão automatizada de Declarações de Origem, simplificando as operações da sua empresa.
                 </p>
                 <span className="sistemas-saiba-mais">Saiba mais</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

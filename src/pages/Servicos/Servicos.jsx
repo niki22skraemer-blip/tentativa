@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './servicos.css';
 
 export default function Servicos() {
@@ -21,8 +22,7 @@ export default function Servicos() {
   }, []);
 
   return (
-
-<main className="servicos-page">
+    <main className="servicos-page">
       {/* SEÇÃO 1 */}
       <section className="servicos-secao-1">
         <div className="servicos-titulo-1">
@@ -72,7 +72,7 @@ export default function Servicos() {
           <div className="servicos-container-grid">
             {/* CARD 1 */}
             <div className="servicos-card-item">
-              <a href="/reintegra">
+              <Link to="/reintegra">
                 <h3>REINTEGRA</h3>
                 <p className="servicos-card-descricao">
                   Programa da Receita Federal que devolve 
@@ -80,12 +80,12 @@ export default function Servicos() {
                    pagos ao longo da cadeia produtiva.
                 </p>
                 <span className="servicos-saiba-mais">Saiba mais</span>
-              </a>
+              </Link>
             </div>
 
             {/* CARD 2 */}
             <div className="servicos-card-item">
-              <a href="/sped">
+              <Link to="/sped">
                 <h3>SPED para Exportação</h3>
                 <p className="servicos-card-descricao">
                   Sistema da Receita Federal que unifica e 
@@ -93,12 +93,12 @@ export default function Servicos() {
                    das empresas.
                 </p>
                 <span className="servicos-saiba-mais">Saiba mais</span>
-              </a>
+              </Link>
             </div>
 
             {/* CARD 3 */}
             <div className="servicos-card-item">
-              <a href="/catalogo">
+              <Link to="/catalogo">
                 <h3>CATÁLOGO DE PRODUTOS</h3>
                 <p className="servicos-card-descricao">
                   Serviço de catalogação de produtos importados
@@ -106,11 +106,11 @@ export default function Servicos() {
                    dar segurança às suas operações.
                 </p>
                 <span className="servicos-saiba-mais">Saiba mais</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </section>
     </main>
-    );
-  }
+  );
+}

@@ -276,7 +276,9 @@
 
 /* ===================== RESPONSIVO ===================== */
 @media (max-width: 768px) {
-  .titulos { font-size: 15px; }
+  .educacional-titulos { 
+    font-size: 15px; 
+  }
 
   .educacional-secao-1,
   .educacional-secao-2,
