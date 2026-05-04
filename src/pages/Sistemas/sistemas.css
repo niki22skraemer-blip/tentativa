@@ -1,0 +1,179 @@
+/* ===================== CONFIGURAÇÃO GERAL ===================== */
+.sistemas-page {
+    margin-top: 70px;
+}
+
+.sistemas-titulos-header {
+    text-align: center;
+}
+
+/* ===================== SEÇÃO 1 (BANNER) ===================== */
+.sistemas-secao-1 {
+    text-align: center;
+    padding: 80px 20px;
+    background-image: linear-gradient(to bottom, #25488c, #27498c, #2450a6, #0465bf);
+    color: white;
+}
+
+.sistemas-titulo-1 h1 {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: clamp(24px, 5vw, 36px);
+    line-height: 1.2;
+}
+
+.sistemas-subtitulo p {
+    max-width: 800px;
+    margin: 20px auto 0;
+    font-size: clamp(16px, 3.5vw, 20px);
+    opacity: 0.9;
+}
+
+/* ===================== SEÇÃO ANIMADA ===================== */
+.sistemas-secao-animada-container {
+    padding: 100px 20px;
+    background-color: white;
+}
+
+.sistemas-wrapper-animacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sistemas-foto-animada {
+    width: 450px;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-out;
+}
+
+.sistemas-texto-animado {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-out;
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: justify;
+    color: #444;
+}
+
+.sistemas-wrapper-animacao.ativo .sistemas-foto-animada,
+.sistemas-wrapper-animacao.ativo .sistemas-texto-animado {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===================== SEÇÃO 5 (CARDS) ===================== */
+.sistemas-secao-5 {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.sistemas-container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+}
+
+.sistemas-card-item {
+    background-image: linear-gradient(to top, #25488c, #27498c, #2450a6, #0465bf);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+}
+
+.sistemas-card-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(4, 101, 191, 0.4);
+}
+
+.sistemas-card-item a {
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+}
+
+.sistemas-card-item h3 {
+    margin: 0;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    min-height: 50px;
+}
+
+.sistemas-card-descricao {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 20px 0;
+    flex-grow: 1;
+}
+
+/* ===================== BOTÃO SAIBA MAIS COM HOVER CORRIGIDO ===================== */
+.sistemas-saiba-mais {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    width: fit-content;
+    padding-bottom: 5px;
+}
+
+.sistemas-saiba-mais::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease-in-out;
+}
+
+/* O Segredo: Quando o card recebe hover, a linha do span cresce */
+.sistemas-card-item:hover .sistemas-saiba-mais::before {
+    width: 100%;
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+@media (max-width: 1024px) {
+    .sistemas-container-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sistemas-wrapper-animacao {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sistemas-container-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .sistemas-foto-animada, .sistemas-texto-animado {
+        transform: translateY(30px);
+    }
+}
+
+
+
+
+
+

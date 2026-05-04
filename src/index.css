@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif !important;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  /* Remove a centralização flex do Vite */
+  display: block; 
+  background-color: #ffffff; /* Fundo padrão do site é BRANCO */
+  color: #252733;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  /* Impede o navegador de forçar cores escuras/claras do sistema */
+  color-scheme: light;
+}

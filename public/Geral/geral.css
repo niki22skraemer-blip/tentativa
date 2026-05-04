@@ -1,0 +1,380 @@
+/* ================= RESET / BASE ================= */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  margin: 0;
+}
+
+/* ================= HEADER / MENU ================= */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(76, 90, 110, 0.2);
+}
+
+/* container interno (EVITA ESTOURO) */
+.header-inner {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo img {
+  max-width: 180px;
+  height: auto;
+}
+
+/* ===== NAV DESKTOP ===== */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  white-space: nowrap;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #222733;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.25s ease;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 3px;
+  background-color: #4577D7;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-menu a:hover {
+  color: #4577D7;
+}
+
+/* ===== BOTÃO HAMBURGUER ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 5px 0;
+  background: rgba(22, 24, 128, 0.925);
+  border-radius: 2px;
+}
+
+/* ================= MOBILE MENU ================= */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  #primary-nav {
+    position: fixed;
+    top: 80px;
+    right: 0px;
+
+    width: min(320px, 85vw);
+    height: calc(100vh - 80px);
+
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+  }
+
+  header.is-open #primary-nav {
+    transform: translateX(0);
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+/* ================= FOOTER ================= */
+
+#footer-container {
+  background-image: linear-gradient(
+    to bottom right,
+    #23317e,
+    #27498C,
+    #2450A6,
+    #0465bf
+  );
+  max-width: 100%;
+  min-height: 210px;
+  margin-top: auto;
+  color: #fff;
+
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+}
+
+/* links */ 
+#footer-container a {
+  text-decoration: none;
+}
+
+#footer-container a:hover {
+  text-decoration: underline;
+}
+
+/* colunas */
+.colunas {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  max-width: 1100px;
+  padding-top: 15px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.colu-1,
+.colu-3 {
+  flex: 1;
+}
+
+.colu-2 {
+  flex: 0 0 230px;
+  max-width: 230px;
+}
+
+.colu-1 img {
+  width: 200px;
+}
+
+.colu-1 .texto {
+  max-width: 300px;
+}
+
+.colu-2 img {
+  vertical-align: middle;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.item a {
+  color: #fff;
+}
+
+.colu-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.colu-3 img {
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.encontre-nos {
+  margin-right: 25px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.item-2 {
+  padding-left: 15px;
+}
+
+/* linha final */
+.linha-final {
+  padding-top: 30px;
+  color: #96999b;
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+.linha-final a {
+  color: #96999b;
+}
+
+.politica {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== FOOTER MOBILE ===== */
+@media (max-width: 768px) {
+  /* Layout desejado no mobile:
+     1) Logo + "merchant" (texto) centralizados
+     2) Abaixo: coluna de infos | coluna de ícones (ícones lado a lado) */
+
+  .colunas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "logo logo"
+      "info social";
+    gap: 18px;
+    align-items: start;
+    justify-items: stretch;
+  }
+
+  .colu-1 {
+    grid-area: logo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .colu-1 img {
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .colu-1 .texto {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .colu-2 {
+    grid-area: info;
+    flex: initial;
+    width: 100%;
+    max-width: none;
+  }
+
+  .colu-3 {
+    grid-area: social;
+    align-items: center;
+    text-align: center;
+  }
+
+  .encontre-nos {
+    margin-right: 0;
+  }
+
+  /* ícones lado a lado */
+  .item-2 {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+  }
+
+  .colu-3 img {
+    padding: 0;
+  }
+
+  /* linha final centralizada */
+  .linha-final {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    padding-top: 15px;
+  }
+}
+
+
+/* ================= FIX DEFINITIVO HAMBURGUER (MOBILE REAL) ================= */
+
+@media (max-width: 480px) {
+
+  /* impede qualquer corte horizontal */
+  header,
+  .header-inner {
+    overflow: visible;
+  }
+
+  /* força layout seguro */
+  .header-inner {
+    min-width: 0;
+  }
+
+  /* logo pode encolher, botão NÃO */
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .logo img {
+    max-width: 150px; /* reduz só no mobile pequeno */
+  }
+
+  /* botão nunca encolhe nem corta */
+  .menu-toggle {
+    flex: 0 0 auto;
+    min-width: 44px; /* área mínima de toque */
+    min-height: 44px;
+    padding: 20px;
+  }
+
+  /* garante que o menu desktop NÃO interfira */
+  .nav-menu {
+    display: none;
+  }
+
+  header.is-open .nav-menu {
+    display: flex;
+  }
+}
+

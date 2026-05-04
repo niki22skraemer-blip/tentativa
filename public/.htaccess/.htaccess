@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# =========================================
+# A) 301: /pt-br/Home/home.html  -> /home
+#    (regra genérica: /pt-br/<Pasta>/<arquivo>.html vira /<arquivo>)
+# =========================================
+RewriteCond %{THE_REQUEST} \s/+pt-br/[^/]+/([A-Za-z0-9_-]+)\.html[\s?] [NC]
+RewriteRule ^pt-br/[^/]+/([A-Za-z0-9_-]+)\.html$ /$1 [R=301,L,NE]
+
+# =========================================
+# B) SPA fallback: qualquer rota -> /index.html
+#    (mantém /home, /drawback, /sobre etc funcionando no refresh)
+# =========================================
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule . /index.html [L]

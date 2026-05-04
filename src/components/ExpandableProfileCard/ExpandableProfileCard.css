@@ -1,0 +1,191 @@
+/* ExpandableProfileCard.css */
+
+.profileCardSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 60px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.profileCard {
+  width: min(900px, 92vw);
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(53, 55, 61, 0.315);
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* ===================== HEADER (clicável) ===================== */
+
+.profileCardHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 18px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.profileCardAvatarWrap {
+  width: 95px;
+  height: 95px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  padding: 3px;
+}
+
+.profileCardAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #ffffff;
+}
+
+.profileCardHeaderText {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.profileCardName {
+  margin: 0;
+  color: #25488c;
+  font-size: 20px;
+}
+
+.profileCardHint {
+  margin: 10px 0 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.profileCardChevron {
+  flex: 0 0 auto;
+  font-size: 18px;
+  color: #25488c;
+  transition: transform 220ms ease;
+}
+
+.profileCard.isExpanded .profileCardChevron {
+  transform: rotate(180deg);
+}
+
+/* ===================== BODY (expansível) ===================== */
+/* Importante: overflow + padding só quando abrir (pra não aparecer nada antes) */
+
+.profileCardBody {
+  overflow: hidden; /* <- impede “vazamento” antes do clique */
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 260ms ease;
+}
+
+.profileCardBodyInner {
+  min-height: 0; /* <- garante colapso correto */
+  overflow: hidden;
+  padding: 0; /* fechado = sem padding */
+  opacity: 0; /* fechado = invisível */
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.profileCard.isExpanded .profileCardBody {
+  grid-template-rows: 1fr;
+}
+
+.profileCard.isExpanded .profileCardBodyInner {
+  padding: 0 18px 18px; /* desktop */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Divisor bonitinho no lugar do <hr /> */
+.profileCardDivider {
+  display: block;
+  height: 1px;
+  background: rgba(35, 49, 126, 0.15);
+  margin: 10px 0;
+}
+
+.profileCardText {
+  margin: 0;
+  color: black;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* ===================== HOVER (desktop) ===================== */
+/* Se não quiser abrir no hover, apaga esse bloco */
+
+@media (hover: hover) and (pointer: fine) {
+  .profileCard:hover .profileCardBody {
+    grid-template-rows: 1fr;
+  }
+
+  .profileCard:hover .profileCardBodyInner {
+    padding: 0 18px 18px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .profileCard:hover .profileCardChevron {
+    transform: rotate(180deg);
+  }
+}
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 768px) {
+  .profileCardSection {
+    padding: 18px 0 40px;
+  }
+
+  .profileCardHeader {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .profileCardAvatarWrap {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profileCardName {
+    font-size: 1.25rem;
+  }
+
+  .profileCardHint {
+    font-size: 0.9rem;
+  }
+
+  .profileCard.isExpanded .profileCardBodyInner {
+    padding: 0 16px 16px; /* mobile */
+  }
+
+  .profileCardText {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .profileCardHeader {
+    padding: 14px;
+  }
+
+  .profileCardAvatarWrap {
+    width: 64px;
+    height: 64px;
+  }
+
+  .profileCardName {
+    font-size: 1.15rem;
+  }
+
+  .profileCardHint {
+    font-size: 0.85rem;
+  }
+}

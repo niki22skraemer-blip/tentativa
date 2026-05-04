@@ -1,0 +1,49 @@
+.counters{
+    margin: 10px;
+    padding: 25px;
+    background: #f1f1f1;
+    text-align: center;
+    overflow: hidden;
+}
+
+.counters > div{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.counter{
+    position: relative;
+}
+
+.counter h1{
+    color: #25488c;
+    margin: 0;
+    font-size: 50px;
+}
+
+.counter h3{
+    color: rgb(0, 0, 0);
+    margin: 20px;
+}
+
+
+/*DESIGN RESPONSIVO*/
+
+@media screen and
+(max-width: 900px) and (min-width: 501px){
+    .counters > div{
+        grid-template-columns: 1fr 1fr;
+    }
+    .counter:nth-child(2)::before{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .counters > div{
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+    }
+}

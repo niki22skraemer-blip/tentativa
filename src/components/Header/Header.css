@@ -1,0 +1,172 @@
+/* Container Principal */
+header {
+  width: 100%;
+  padding: 14px 20px;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* Menu de Navegação */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 8px 0;    /* Padding lateral zero para a barra não sobrar */
+  margin: 0 15px;    /* Margem cria o espaço entre as palavras */
+  position: relative; 
+  display: inline-block; /* Faz o elemento ter a largura exata do texto */
+  transition: all 0.2s ease;
+}
+
+/* Criando a barrinha (invisível por padrão) */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #0465bf;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0465bf;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  
+}
+
+/* ESTADO FIXO: Quando a aba estiver selecionada (.active) */
+.nav-link.active::after,
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Faz a barrinha ficar com 100% de largura permanentemente no link ativo */
+.nav-link.active::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* --- Desktop (Hover) --- */
+.nav-item-container {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Centraliza o link dentro do espaço disponível */
+  width: auto; /* Deixa o container ter apenas o tamanho necessário */
+}
+
+.submenu {
+  position: absolute;
+  top: 165%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  width: 100px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.226);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.nav-item-container:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.submenu-link {
+  display: block;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #0465bf;
+  font-size: 14px;
+}
+
+.submenu-link:hover {
+  color: #0465bf;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav-item-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* <--- ADICIONE ESTA LINHA AQUI */
+  }
+
+  /* Submenu no Mobile */
+  .submenu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* Quando o Dropdown é ativado pelo clique no Quem Somos */
+  .dropdown-active .submenu {
+    max-height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .submenu-link {
+    display: block;
+    border-left: 3px solid #0465bf; /* Borda esquerda */
+    text-decoration: none;
+    color: #252733;
+    font-size: 16px;
+  }
+
+  .parent-open {
+    color: #0465bf !important;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+    display: table; /* Garante que a barrinha acompanhe o texto no mobile também */
+  }
+}

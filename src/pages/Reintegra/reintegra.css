@@ -1,0 +1,106 @@
+/* ===================== AJUSTE DE MARGEM DA PÁGINA ===================== */
+.reintegra-page {
+    margin-top: 70px;
+}
+
+.reintegra-titulos {
+    text-align: center;
+}
+
+/* ===================== PADRÃO DE ESPAÇAMENTO ===================== */
+.reintegra-secao-1,
+.reintegra-secao-2,
+.reintegra-secao-3 {
+    padding: 60px 0;
+}
+
+/* ============================ SEÇÃO 1 ============================ */
+.reintegra-secao-1 p {
+    padding: 20px;
+    font-size: 19px;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+.reintegra-secao-1 .reintegra-titulos-1 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* =========================== SEÇÃO 2 =========================== */
+.reintegra-secao-2 {
+    background-color: #f9f9f9; /* Tom suave para separar as seções */
+}
+
+.reintegra-secao-2 p {
+    padding: 20px;
+    font-size: 19px;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ======================== SEÇÃO 3 (CTA) =========================== */
+.reintegra-secao-3 .reintegra-fale-conosco {
+    padding: 40px 20px;
+    border-radius: 20px;
+    background-color: #0465bf;
+    width: min(520px, 90%);
+    margin: 20px auto; 
+    box-sizing: border-box;
+    box-shadow: 0 10px 25px rgba(4, 101, 191, 0.2);
+}
+
+.reintegra-secao-3 .reintegra-fale-conosco p {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.reintegra-secao-3 .reintegra-contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.reintegra-contato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.reintegra-contato-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.reintegra-contato-item a { 
+    color: white; 
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.reintegra-contato-item a:hover {
+    opacity: 0.8;
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+@media (max-width: 600px) {
+    .reintegra-secao-1 p, 
+    .reintegra-secao-2 p {
+        font-size: 17px;
+    }
+    
+    .reintegra-secao-3 .reintegra-fale-conosco p {
+        font-size: 22px;
+    }
+}

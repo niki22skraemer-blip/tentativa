@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+}
+
+.timeline::before {
+    top: 0; 
+}
+
+.timeline {
+    position: relative;
+    padding-top: 0; 
+}
+
+/* ================== CONTAINER PRINCIPAL ================== */
+.section-timeline {
+    padding-top: 100px; /* Desce a seção para ficar abaixo do menu fixo */
+    z-index: 1; 
+    background-color: white;
+    position: relative;
+    overflow: hidden; 
+}
+
+.inline-block {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.timeline_component {
+    position: relative;
+    max-width: 900px; 
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 0; Zerado para não criar espaço antes do 1992 */
+}
+
+/* ================== LINHAS DE PROGRESSO ================== */
+
+.timeline_progress {
+    z-index: 1; 
+    background-color: rgb(177, 176, 176);
+    width: 3px;
+    position: absolute;
+    left: 50px; 
+    transform: translateX(-50%);
+    top: 50px;
+    padding-top: 5px;
+    bottom: 400px; /* Isso diz: "pare a linha 200px antes do container acabar" */
+}
+
+.timeline_progress-bar {
+    z-index: 2;
+    background: linear-gradient(to bottom, rgb(243, 244, 255), #0465BF);
+    width: 100%; /* Preenche os 3px da barra branca */
+    height: 100%;
+    position: absolute; /* Volta a obedecer a barra branca */
+    top: 0;
+    left: 0; 
+}
+
+/* ================== GRID DO ITEM ================== */
+
+.timeline_item {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 60px 1fr; 
+    grid-template-rows: max-content max-content; 
+    grid-column-gap: 20px; 
+    position: relative;
+    width: 100%;
+    
+    /* AS MUDANÇAS ESTÃO AQUI 👇 */
+    min-height: 350px;    /* Troca o 'height' fixo por 'min-height' */
+    padding-bottom: 80px; /* Cria um respiro exato e padronizado no fim de CADA item */
+}
+
+.timeline_centre {
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+}
+
+.timeline_circle {
+    background-color: #fff;
+    border-radius: 100%;
+    width: 15px;
+    min-width: 15px;
+    max-width: 15px;
+    height: 15px;
+    min-height: 15px;
+    max-height: 15px;
+    position: sticky;
+    top: 160px; /* Trava logo abaixo do menu, alinhado com o texto */
+    box-shadow: 0 0 0 8px #25488c;
+
+}
+
+.timeline_left {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 10px; 
+    padding-bottom: 8px;
+}
+
+.timeline_date-text {
+    color: #25488c;
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 1.2;
+    position: sticky;
+    top: 150px; /* Trava o texto na mesma proporção logo abaixo do menu */
+}
+
+/* TEXTO (Fica na Coluna 2, na parte de Baixo) */
+.timeline_right {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.timeline_text {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: justify;
+    max-width: 500px;
+}
+
+/* ================== COMPORTAMENTO DE INVERSÃO (OPCIONAL) ================== */
+.timeline_item:nth-child(even) .timeline_date-text {
+    position: sticky;
+    top: 150px;
+}
+.timeline_item:nth-child(even) .timeline_circle {
+    position: sticky;
+    top: 160px;
+}
+
+/* ======================================================== */
+
+.margin-bottom-xlarge { margin-bottom: 56px; }
+.margin-bottom-medium { margin-bottom: 32px; }
+.text-colour-lightgrey { color: #ffffffa6; }
+
+/* ================= MÁSCARAS DE BLUR ===================== */
+
+.timeline_mask-top, .timeline_mask-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px; 
+    z-index: 10;
+    pointer-events: none;
+}
+
+.timeline_mask-top {
+    top: 0;
+    background: linear-gradient(to bottom, #2b2986 20%, rgba(43, 41, 134, 0));
+}
+
+.timeline_mask-bottom {
+    bottom: 0;
+    background: linear-gradient(to top, #2b2986 20%, rgba(43, 41, 134, 0));
+}
+
+/* ================= MOBILE ===================== */
+
+@media screen and (max-width: 767px) {
+    .timeline_component {
+        padding: 0 10px; 
+        padding-top: 0; 
+    }
+
+    .timeline_progress {
+        left: 35px; 
+        bottom: 450px;
+    }
+
+    .timeline_progress-bar {
+        /* No mobile, a barra azul também só precisa preencher o pai (branca) */
+        left: 0; 
+        width: 100%; 
+        height: 100%;
+    }
+
+    .timeline_item {
+        grid-template-columns: 50px 1fr;
+        grid-column-gap: 15px;
+        
+        /* AS MUDANÇAS ESTÃO AQUI 👇 */
+        min-height: 350px; 
+        padding-bottom: 60px; /* Um respiro um pouco menor para telas pequenas */
+    }
+
+    .timeline_date-text {
+        font-size: 28px;
+    }
+
+    .timeline_text {
+        font-size: 16px;
+        width: 250px;
+    }
+}

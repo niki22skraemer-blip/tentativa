@@ -1,0 +1,339 @@
+/* ===================== AJUSTE LOCAL DO CONTEÚDO ===================== */
+.drawback-page {
+  margin-top: 70px;
+}
+
+.drawback-titulos {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+}
+
+/* ===================== PADRÃO DE ESPAÇAMENTO ENTRE SECTIONS ===================== */
+.drawback-secao-1,
+.drawback-secao-2,
+.drawback-secao-3,
+.drawback-secao-4,
+.drawback-secao-5,
+.drawback-secao-6 {
+  padding: 60px 0;
+}
+
+/* ===================== SEÇÃO 1 ===================== */
+.drawback-secao-1 {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px; /* mantém o interno dela */
+  background-image: linear-gradient(to bottom, #25488c, #27498c, #2450a6, #0465bf);
+}
+
+.drawback-secao-1 .drawback-titulo-1 {
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+  font-size: clamp(22px, 4.8vw, 30px);
+  line-height: 1.15;
+}
+
+.drawback-secao-1 .drawback-subtitulo {
+  max-width: 800px;
+  margin: 12px auto 0;
+  color: white;
+  font-size: clamp(16px, 3.5vw, 20px);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.drawback-secao-1 .drawback-subtitulo p {
+  margin: 20px;
+  font-size: clamp(16px, 3.5vw, 20px);
+  line-height: 1.4;
+}
+
+/* ===================== SEÇÃO 2 ===================== */
+.drawback-secao-2 {
+  background: white;
+  margin-top: 0; 
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.drawback-secao-2 p {
+  padding: 20px;
+  font-size: 20px;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto; 
+  line-height: 1.6;
+}
+
+/* ===================== SEÇÃO 3 ===================== */
+.drawback-secao-3 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.drawback-secao-3 p {
+  padding: 20px;
+  font-size: 20px;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto; 
+  line-height: 1.6;
+}
+
+/* ===================== SEÇÃO 4 ===================== */
+.drawback-secao-4 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.drawback-secao-4 .drawback-container-balao {
+  padding-top: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+
+  justify-items: center;
+  align-items: stretch;
+}
+
+.drawback-secao-4 .drawback-balao {
+  width: 220px;
+  height: 150px;
+  padding: 20px;
+
+  background-image: linear-gradient(to top, #25488c, #27498c, #2450a6, #0465bf);
+  border-radius: 15px;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.3;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.drawback-secao-4 .drawback-balao p {
+  margin: 0;
+}
+
+.drawback-secao-4 .drawback-balao:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 10px rgba(51, 65, 90, 0.192);
+}
+
+/* ===================== PARA QUEM ===================== */
+.drawback-para-quem {
+  padding-top: 60px;
+  margin-top: -45px;
+}
+
+.drawback-para-quem p {
+  padding: 20px;
+  font-size: 20px;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+/* ===================== SEÇÃO 5 ===================== */
+.drawback-secao-5 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.drawback-secao-5 p {
+  padding: 20px;
+  font-size: 20px;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+.drawback-secao-5 .drawback-carrossel {
+  margin: 40px auto;
+  width: 90%;
+  overflow: hidden;
+}
+
+.drawback-secao-5 .drawback-carrossel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.drawback-secao-5 .drawback-carrossel-group {
+  display: flex;
+  gap: 50px;
+  padding-top: 50px;
+}
+
+.drawback-secao-5 .drawback-card {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+}
+
+/* padrão para todas */
+.drawback-secao-5 .drawback-card img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* só a FuelTech */
+.drawback-secao-5 .drawback-card img.drawback-logo-fueltech {
+  height: 200px;
+}
+
+/* ===================== SEÇÃO 6 ===================== */
+.drawback-secao-6 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.drawback-secao-6 .drawback-fale-conosco {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #0465bf;
+  width: min(520px, 90%);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.drawback-secao-6 .drawback-fale-conosco p {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.drawback-secao-6 .drawback-contatos {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+}
+
+.drawback-secao-6 .drawback-contatos img {
+  width: 30px;
+  vertical-align: middle;
+}
+
+.drawback-secao-6 .drawback-contato-item {
+  vertical-align: middle;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+}
+
+.drawback-secao-6 .drawback-contatos a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 768px) {
+  .drawback-secao-5 .drawback-carrossel {
+    margin: 30px auto;
+  }
+
+  .drawback-secao-5 .drawback-carrossel-group {
+    gap: 24px;
+  }
+
+  .drawback-secao-5 .drawback-card {
+    width: 140px;      
+    height: 90px;
+    padding: 10px;     
+  }
+
+  .drawback-secao-5 .drawback-card img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    padding: 0;        
+  }
+
+  .drawback-secao-5 .drawback-card img.drawback-logo-fueltech {
+    height: 70px;  
+  }
+}
+
+/*==========================MOBILE==========================*/
+@media (max-width: 600px) {
+
+  .drawback-titulos {
+    font-size: 15px;
+  }
+
+  .drawback-secao-1,
+  .drawback-secao-2,
+  .drawback-secao-3,
+  .drawback-secao-4,
+  .drawback-secao-5,
+  .drawback-secao-6 {
+    padding: 30px 0;
+  }
+
+  .drawback-secao-2 p,
+  .drawback-secao-3 p,
+  .drawback-para-quem p,
+  .drawback-secao-5 p {
+    font-size: 17px;
+  }
+
+  .drawback-secao-4 .drawback-container-balao {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px; 
+    margin: 40px; 
+    justify-items: center;
+    align-items: stretch;
+  }
+
+  .drawback-secao-4 .drawback-balao {
+    width: 100%;          
+    height: 110px;        
+    padding: 10px;        
+    border-radius: 15px;
+  }
+
+  .drawback-secao-4 .drawback-balao p {
+    font-size: 12px;
+    line-height: 1.25;
+    margin: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .drawback-secao-4 .drawback-balao { width: 100%; }
+  .drawback-secao-4 .drawback-balao p { font-size: 13px; }
+
+  .drawback-secao-5 p{
+    font-size: 17px;
+  }
+}

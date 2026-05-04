@@ -1,0 +1,76 @@
+.sped-titulos{
+    text-align: center;
+}
+
+/*============================SEÇÃO 1============================*/
+
+.sped-secao-1 p{
+  padding: 20px;
+  font-size: 19px;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.sped-titulos-1{
+    margin-top: 130px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+/*===========================SEÇÃO 2===========================*/
+
+.sped-secao-2 p{
+  padding: 20px;
+  font-size: 19px;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+/*========================SEÇÃO 3===========================*/
+
+
+.sped-fale-conosco{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #0465bf;
+    width: min(520px, 90%);
+    margin: 20px auto; 
+    box-sizing: border-box;
+}
+
+.sped-fale-conosco p{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.sped-contatos{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+}
+.sped-contatos img{
+   width: 30px;
+   vertical-align: middle;
+}
+
+.sped-contato-1,
+.sped-contato-2{
+    padding: 10px;
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+    gap: 5px;
+}
+
+.sped-contato-1 a, .sped-contato-2 a { 
+    color: white; 
+    text-decoration: none;
+}
+

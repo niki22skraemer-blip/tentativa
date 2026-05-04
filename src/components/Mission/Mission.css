@@ -1,0 +1,91 @@
+/* Container dos Cards */
+.sobre-mission-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha no topo para crescerem para baixo */
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 50px 20px;
+}
+
+/* O Card */
+.sobre-mission-card {
+  width: 280px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #eee;
+}
+
+/* Header sempre visível */
+.sobre-mission-header {
+  padding: 25px 20px;
+  text-align: center;
+  color: #25488c;
+}
+
+.sobre-mission-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Conteúdo escondido por padrão */
+.sobre-mission-content {
+  display: grid;
+  grid-template-rows: 0fr; /* Altura zero */
+  opacity: 0;
+  transition: grid-template-rows 0.4s ease, opacity 0.3s ease;
+}
+
+.sobre-mission-inner {
+  overflow: hidden;
+}
+
+.sobre-mission-inner p {
+  padding: 0 20px 25px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+}
+
+/* ===================== O EFEITO HOVER ===================== */
+
+.sobre-mission-card:hover {
+  box-shadow: 0 12px 30px rgba(4, 101, 191, 0.2);
+  border-color: #0465bf;
+  transform: translateY(5px); /* Card "abaixa" levemente como você pediu */
+}
+
+/* Ao passar o mouse no card, o grid expande para 1fr (tamanho total do texto) */
+.sobre-mission-card:hover .sobre-mission-content {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+/* Mudança de cor do título no hover */
+.sobre-mission-card:hover .sobre-mission-header h3 {
+  color: #0465bf;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 768px) {
+  .sobre-mission-card {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* No mobile, talvez seja melhor deixar sempre aberto ou manter o hover */
+  .sobre-mission-content {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+}

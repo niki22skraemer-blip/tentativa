@@ -1,0 +1,79 @@
+.viso-import-titulos{
+    text-align: center;
+}
+
+/*============================SEÇÃO 1============================*/
+
+.viso-import-secao-1 p{
+  padding: 20px;
+  font-size: 19px;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.viso-import-titulos-1{
+    margin-top: 130px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+/*===========================SEÇÃO 2===========================*/
+
+.viso-import-secao-2 p{
+  padding: 20px;
+  font-size: 19px;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+/*========================SEÇÃO 3===========================*/
+
+.viso-import-fale-conosco{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #0465bf;
+    width: min(520px, 90%);
+    margin: 20px auto; 
+    box-sizing: border-box;
+}
+
+
+.viso-import-fale-conosco p{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.viso-import-contatos{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+}
+.viso-import-contatos img{
+   width: 30px;
+   vertical-align: middle;
+}
+
+.viso-import-contato-1,
+.viso-import-contato-2{
+    padding: 10px;
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+    gap: 5px;
+}
+
+.viso-import-contato-1 a, .viso-import-contato-2 a { 
+    color: white; 
+    text-decoration: none;
+}
+
+

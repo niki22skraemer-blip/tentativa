@@ -1,0 +1,209 @@
+#footer-container {
+  background-image: linear-gradient(to top, #25488c, #27498c, #2450a6, #0465bf);
+  max-width: 100%;
+  min-height: 210px;
+  margin-top: auto;
+  padding: 10px;
+  color: #fff;
+
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+}
+
+/* links */
+#footer-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#footer-container a:hover {
+  text-decoration: underline;
+}
+
+/* ===== DESKTOP ===== */
+.colunas {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  max-width: 1100px;
+  padding-top: 15px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.colu-1,
+.colu-3 {
+  flex: 1;
+}
+
+.colu-2 {
+  flex: 0 0 230px;
+  max-width: 230px;
+}
+
+.colu-1 img {
+  width: 200px;
+}
+
+.colu-1 .texto {
+  max-width: 300px;
+}
+
+.colu-2 img {
+  vertical-align: middle;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.item a {
+  color: #fff;
+}
+
+/* Coluna redes sociais */
+.colu-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.encontre-nos {
+  margin-right: 0;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ÍCONES: lado a lado no desktop também */
+.item-2 {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+}
+
+.item-2 a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.colu-3 img {
+  vertical-align: middle;
+  padding: 0;
+}
+
+/* linha final */
+.linha-final {
+  padding-top: 30px;
+  color: #96999b;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+  gap: 12px;
+}
+
+.linha-final a {
+  color: #96999b;
+}
+
+.politica {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== MOBILE =====
+  Layout desejado:
+  1) Logo + texto em cima (centralizados)
+  2) Embaixo: duas colunas
+     - esquerda: contatos
+     - direita: redes sociais
+*/
+@media (max-width: 768px) {
+  .colunas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "logo logo"
+      "contatos social";
+    gap: 18px;
+    align-items: start;
+    justify-items: stretch;
+  }
+
+  /* Logo + texto (topo) */
+  .colu-1 {
+    grid-area: logo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .colu-1 img {
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .colu-1 .texto {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* Contatos (esquerda) */
+  .colu-2 {
+    grid-area: contatos;
+    flex: initial;
+    width: 100%;
+    max-width: none;
+  }
+
+  .item {
+    margin: 12px 0;
+  }
+
+  /* Redes sociais (direita) */
+  .colu-3 {
+    grid-area: social;
+    align-items: center;
+    text-align: center;
+  }
+
+  .encontre-nos {
+    margin-right: 0;
+  }
+
+  /* Ícones lado a lado no mobile */
+  .item-2 {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+  }
+
+  .colu-3 img {
+    padding: 0;
+  }
+
+  /* linha final centralizada */
+  .linha-final {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 15px;
+  }
+}

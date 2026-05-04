@@ -1,0 +1,79 @@
+/*============================ TÍTULOS GERAIS ============================*/
+.catalogo-titulos {
+  text-align: center;
+}
+
+/*============================ SEÇÃO 1 ============================*/
+.catalogo-secao-1 p {
+  padding: 20px;
+  font-size: 19px;
+  text-align: justify;
+  max-width: 800px;
+  margin:  0 auto 60px;
+  line-height: 1.6;
+}
+
+.catalogo-secao-1 .catalogo-titulos-1 {
+  margin-top: 130px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column; /* Adicionado para garantir que o hr fique embaixo do h1 */
+}
+
+/*=========================== SEÇÃO 2 ===========================*/
+.catalogo-secao-2 p {
+  padding: 20px;
+  font-size: 19px;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+/*======================== SEÇÃO 3 ===========================*/
+.catalogo-secao-3 .catalogo-fale-conosco {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #0465bf;
+  width: min(520px, 90%);
+  margin: 20px auto; 
+  box-sizing: border-box;
+}
+
+.catalogo-secao-3 .catalogo-fale-conosco p {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+
+.catalogo-secao-3 .catalogo-contatos {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.catalogo-secao-3 .catalogo-contatos img {
+  width: 30px;
+  vertical-align: middle;
+}
+
+
+.catalogo-secao-3 .catalogo-contato-item {
+  padding: 10px;
+  vertical-align: middle;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.catalogo-contato-item a { 
+  color: white; 
+  text-decoration: none;
+}

@@ -1,0 +1,109 @@
+/* ===================== AJUSTE DE MARGEM DA PÁGINA ===================== */
+.gespro-page {
+    margin-top: 70px;
+}
+
+.gespro-titulos {
+    text-align: center;
+}
+
+/* ===================== PADRÃO DE ESPAÇAMENTO ===================== */
+.gespro-secao-1,
+.gespro-secao-2,
+.gespro-secao-3 {
+    padding: 60px 0;
+}
+
+/* ============================ SEÇÃO 1 ============================ */
+
+.gespro-secao-1 p {
+    padding: 20px;
+    font-size: 19px;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+.gespro-secao-1 .gespro-titulos-1 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* =========================== SEÇÃO 2 =========================== */
+
+.gespro-secao-2 {
+    background-color: #f9f9f9; /* Um leve cinza para diferenciar da seção 1 */
+}
+
+.gespro-secao-2 p {
+    padding: 20px;
+    font-size: 19px;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ======================== SEÇÃO 3 (CTA) =========================== */
+
+.gespro-secao-3 .gespro-fale-conosco {
+    padding: 40px 20px;
+    border-radius: 20px;
+    background-color: #0465bf;
+    width: min(520px, 90%);
+    margin: 20px auto; 
+    box-sizing: border-box;
+    box-shadow: 0 10px 25px rgba(4, 101, 191, 0.2);
+}
+
+.gespro-secao-3 .gespro-fale-conosco p {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.gespro-secao-3 .gespro-contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.gespro-contato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.gespro-contato-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.gespro-contato-item a { 
+    color: white; 
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.gespro-contato-item a:hover {
+    opacity: 0.8;
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+@media (max-width: 600px) {
+    .gespro-secao-1 p, 
+    .gespro-secao-2 p {
+        font-size: 17px;
+    }
+    
+    .gespro-secao-3 .gespro-fale-conosco p {
+        font-size: 22px;
+    }
+}

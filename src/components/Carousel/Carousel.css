@@ -1,0 +1,135 @@
+.home-hero{
+  width: 100%;
+  position: relative;
+}
+
+.home-hero .carousel{
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.home-hero .carousel::-webkit-scrollbar{ display: none; }
+
+.home-hero .carousel-item{
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+/* banner encostado */
+.home-hero .carousel-card{
+  margin: 0;
+  padding-top: 100px;
+  color: #fff;
+  background: linear-gradient(to bottom, #25488c, #27498c, #2450a6, #0465bf);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  border-radius: 0; /* encosta total */
+}
+
+/* setas por cima (não criam “borda”) */
+.home-hero > button{
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  height: 30px;
+  width: 30px;
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.18);
+}
+
+.home-hero > button:hover{
+  background: rgba(255,255,255,0.28);
+}
+
+.home-hero > button:first-of-type{ left: 12px; }
+.home-hero > button:last-of-type{ right: 12px; }
+
+.home-hero .carousel-title{
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.05;
+}
+
+.home-hero .carousel-text{
+  margin: 12px 0 0;
+  font-size: 20px;
+  max-width: 720px;
+}
+
+.home-hero .carousel-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+  padding: 10px;
+  min-width: 100px;
+  min-height: 30px;
+
+  border-radius: 10px;
+  background: rgba(255,255,255,0.95);
+  color: #25488c;
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+.home-hero .carousel-btn:hover{
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.22);
+}
+
+@media (max-width: 768px){
+  /* empurra o carrossel pra baixo no mobile */
+  .home-hero{
+    margin-top: 20px;   /* ajuste: 12px / 20px / 24px */
+  }
+
+  .home-hero .carousel-card{
+     padding-top: 55px; 
+     height: 240px; 
+    }
+
+  .home-hero .carousel-title{ 
+    font-size: 34px; 
+  }
+
+  .home-hero .carousel-text{ 
+    font-size: 16px; 
+  }
+
+  .home-hero > button{
+    top: 65%;
+    height: 20px; 
+    width: 20px; 
+  }
+
+.home-hero .carousel-btn{
+  font-size: 15px;
+  min-width: 40px;
+  min-height: 15px;  
+  border-radius: 15px;
+  }
+}
+
